@@ -9,13 +9,19 @@ const app=express()
 //this line will convert data into json format
 app.use(express.json());
 
+
 app.use(express.urlencoded({extended: false}));
 
 // use EJS as the view engine
 app.set("view engine", "ejs")
 
 app.get("/",(req,res)=>{
-    res.render("login");
+    // res.render("login");
+    res.render("home-layout");
+})
+
+app.get("/login",(req,res)=>{
+  res.render("login");
 })
 
 app.get("/signup",(req,res)=>{
